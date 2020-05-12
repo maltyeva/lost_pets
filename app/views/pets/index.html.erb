@@ -1,0 +1,13 @@
+<h1>Lost Kitty 😿 </h1>
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <!-- link_to "ANCHOR", RAILS_PREFIX -->
+      <h4><%= link_to pet.name, pet_path(pet.id) %></h4>
+      <p>Found at: <%= pet.location %></p>
+      <p>Found on: <%= pet.clean_date %></p>
+      <p><%= link_to "Delete Pet", pet_path(pet.id), method: :delete, data: {confirm: "Are you sure?"} %></p>
+    </li>
+  <% end %>
+</ul>
+<p><%= link_to "Add a new Pet", new_pet_path  %></p>

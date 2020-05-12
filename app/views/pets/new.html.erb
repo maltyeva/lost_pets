@@ -1,0 +1,9 @@
+<h1>Add a new pet</h1>
+<%= simple_form_for(@pet) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :found_on %>
+  <%= f.input :category, collection: %w(cat dog), as: :radio_buttons %>
+  <%= f.input :color, collection: Pet::COLORS %>
+  <%= f.submit "Add Pet", class: "btn btn-primary" %>
+<% end %>

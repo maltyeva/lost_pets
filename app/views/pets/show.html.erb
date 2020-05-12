@@ -1,0 +1,11 @@
+<h1>More Info about <%= @pet.name %></h1>
+<% if @pet.found %>
+  <div class="btn btn-success">Found</div>
+<% else %>
+  <div class="btn btn-danger">Lost</div>
+<% end %>
+<p>Color:<%= @pet.color %></p>
+<p>Location:<%= @pet.location %></p>
+<p>Found on:<%= @pet.clean_date %></p>
+<p>Pet Category:<%= @pet.category %></p>
+<p><%= link_to "Back to list", pets_path %> | <%= link_to "Edit Pet", edit_pet_path(@pet.id) %></p>

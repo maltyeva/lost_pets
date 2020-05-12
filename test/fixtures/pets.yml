@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  category: MyString
+  found_on: 2020-05-12 16:40:51
+  location: MyString
+  color: MyString
+
+two:
+  name: MyString
+  category: MyString
+  found_on: 2020-05-12 16:40:51
+  location: MyString
+  color: MyString

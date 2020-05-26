@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-8">
+      <h1><%= heading %></h1>
+      <!-- <form action="">
+  <input type="text" name="pet[name]" id="pet_name">
+</form> -->
+      <%= simple_form_for(@pet) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :found_on, label: "Please select a date", as: :date, html5: true %>
+        <%= f.input :species, collection: Pet::SPECIES, as: :radio_buttons  %>
+        <%= f.input :age, collection: (1..10), hint: "Please enter age in years" %>
+        <% if has_column %>
+          <%= f.input :recovered %>
+        <% end %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<h1>All Pets</h1>
+<% @pets.each do |pet| %>
+  <div class="pet">
+    <h5><%= link_to pet.name, pet_path(pet)%></h5>
+    <p>Found at <%= pet.address %> on <%= pet.found_on.strftime("%A, %b %d") %>
+      <%= link_to "Delete", pet_path(pet), method: :delete, data: {confirm: "Are you sure? 😿"} %></p>
+  </div>
+<% end %>
+<%= link_to "Add a Pet", new_pet_path %>

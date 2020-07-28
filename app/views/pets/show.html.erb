@@ -1,0 +1,7 @@
+<h4>Found at: <%= @pet.location %></h4>
+<p>Found on: <%= @pet.created_at.strftime("%e %b %Y %H:%M:%S%p") %></p>
+<p>Gender: <%= @pet.gender %></p>
+<p>Reward: <%= @pet.reward %></p>
+<p>This pet is <%= @pet.cuteness %> on the cuteness scale</p>
+<%= link_to "Back to list",  pets_path %> | 
+<%= link_to "Edit Pet", edit_pet_path(@pet) %>

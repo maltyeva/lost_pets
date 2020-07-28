@@ -1,0 +1,17 @@
+<h1 class="text-center"><%= title %></h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-8">
+      <%= simple_form_for(pet) do |f| %>
+        <%= f.input :location, placeholder: "Shanghai", autofocus: true %>
+        <%= f.input :gender, collection: ["M", "F", "Dunno"] %>
+        <%= f.input :cuteness, collection: (0..10) %>
+        <%= f.input :reward, hint: "Be nice please. Don't charge too much $$ " %>
+        <% if show_attributes == true %>
+          <%= f.input :breed, collection: Pet::BREED, as: :radio_buttons %>
+        <% end %>
+        <%= f.submit title, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="text-center">Lost Pets App 😿</h1>
+  <%= link_to "Add a new lost pet", new_pet_path, class: "btn btn-primary" %>
+  <div class="row">
+    <% @pets.each do |pet| %>
+      <div class="col-xs-12 col-sm-4 py-3">
+        <h4>Found at: <%= pet.location %></h4>
+        <p>Found on: <%= pet.created_at.strftime("%e %b %Y %H:%M:%S%p") %></p>
+        <p>Gender: <%= pet.gender %></p>
+        <p>Reward: <%= pet.reward %></p>
+        <p>This pet is <%= pet.cuteness %> on the cuteness scale</p>
+        <%= link_to "More details", pet_path(pet), class: "btn btn-success"  %>
+        <%= link_to "Delete Pet", pet_path(pet), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure??????"}  %>
+      </div>
+    <% end %>
+  </div>
+</div>
